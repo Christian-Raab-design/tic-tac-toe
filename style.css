@@ -1,0 +1,128 @@
+/* Gesamte Seite: Hintergrund, Schrift, Zentrierung */
+body {
+    background-color: #323232;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* gesamte Fensterhöhe */
+    display: flex;
+    justify-content: center; /* horizontal zentrieren */
+    align-items: center;     /* vertikal zentrieren */
+}
+
+h1{
+    text-align: center;
+}
+
+/* Container, der das Spielfeld enthält */
+#content {
+    position: relative;
+    width: 240px;
+    height: 240px;
+}
+
+
+/* Tabelle */
+table {
+    border-collapse: collapse;
+}
+
+/* Zellen */
+td {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+    border: 5px solid white;
+    font-size: 2.5rem;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Nur innere Linien (keine Ränder außen) */
+table tr:first-child td {
+    border-top: none;
+}
+table tr:last-child td {
+    border-bottom: none;
+}
+table tr td:first-child {
+    border-left: none;
+}
+table tr td:last-child {
+    border-right: none;
+}
+
+/* Symbol-Farben */
+td.cross {
+    color: #fbbf00;
+}
+td.circle {
+    color: #15a5da;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+    border: 5px solid white;
+    font-size: 2.5rem;
+    padding: 0;
+}
+
+td svg {
+    display: block;
+    margin: auto;
+}
+
+
+td svg {
+    display: block;
+    margin: auto;
+}
+
+#restart-btn {
+    display: none; /* erstmal ausblenden */
+    margin: 30px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #fbbf00;
+    color: #323232;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#restart-btn:hover {
+    background-color: #e0a800;
+}
+
+#player-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.player-icon {
+    width: 70px;
+    height: 70px;
+    opacity: 0.3; /* inaktiv standard */
+    transition: opacity 0.3s ease;
+}
+
+.player-icon.active {
+    opacity: 1;
+}
+
+/* damit das SVG zentriert wird */
+.player-icon svg {
+    display: block;
+}
